@@ -60,3 +60,11 @@
 #     print(3)
 # else: 
 #     print(4)
+
+# №3
+# ___
+# a =str(input('введите число: '))
+# if int(a[0])>int(a[1]):
+#     print(a[0])
+# else: 
+#     print(a[1])
