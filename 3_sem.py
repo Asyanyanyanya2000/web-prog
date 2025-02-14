@@ -68,3 +68,11 @@
 #     print(a[0])
 # else: 
 #     print(a[1])
+
+# №4
+# ___
+# a =str(input('введите число: '))
+# i=0
+# while i<len(a):
+#     print (a[i], end=', ')
+#     i+=1
