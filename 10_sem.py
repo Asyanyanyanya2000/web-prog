@@ -1,53 +1,82 @@
+#конспесты Максима 
 '''
-есть исходный англо-латинский словарь - нужно превратить в латино -англиский
-исходный: 
-
-3
-apple - malum, pomum, popula
-fruit - baca, bacca, popum
-punishment - malum, multa
-
-результат выполнения:
-
-7
-baca - fruit
-bacca - fruit 
-malum - apple, punishment
-multa - punishment
-pomum - apple
-popula - apple
-popum - fruit
-
-исходный словарь в файле input.txt а результат в output.txt
-'''
-
-def work_input_d():
-    f=open('input.txt')
-    N= f.readline()
-    d= {}
-    for line in f:
-        words = line.strip().split(' - ')
-        en= words[0] 
-        lat = words[1].split(', ')
-        for key in lat:
-            if key in d:
-                d[key].append(en)
-            else:
-                d[key]=[en]
-    f.close()
-
-    for key in d:
-        d[key].sort()
-    return d
-
-def write_new_d(dict_in):
-    g= open('output.txt','w')
-    g.write(str(len(dict_in))+'\n')
-    for lat in sorted(dict_in):
-        g.write(lat+' - '+ ', '.join(dict_in[lat]) +'\n')
-    g.close()
-
-dict_test = work_input_d()
-write_new_d(dict_test)
+class Animal:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def __del__(self):
+        print(f"Животное с именем - {self.name} удаленно")
 
     
+    def speak(self):
+        raise NotImplementedError("Subclass mast imlement abstract metod")
+
+class Dog(Animal):
+    species = "Canis familiar"
+    sound = "woof"
+    def speak(self):
+            return f"{self.name} says {self.sound}"
+
+    def years(self):
+        return self.age *7 
+        
+class Cat(Animal):
+    sound = "meaw"
+    # def speak(self):
+    #     return f"{self.name} says meaw"
+    def speak(self):
+        return f"{self.name} says {self.sound}"
+
+# dog = Dog("Rex", 3)
+
+# cat = Cat("Puff", 2)
+
+# print(dog.name)
+# print(dog.species)
+# print(dog.speak())
+# print(cat.name)
+# print(cat.speak())
+
+
+animals = [Dog("Rex",3), Cat("Puff", 2)]
+
+for animal in animals:
+    print(animal.speak())
+'''
+#и следущие занятие
+
+'''
+class TrCh:
+    def __init__(self,sides):
+        self.sides = sides
+    
+    def is_tr(self):
+        if all(isinstance(side,(int,float)) for side in self.sides):
+            if all(side > 0 for side in self.sides):
+                sort_s=sorted(self.sides)
+                if sort_s[0]+sort_s[1]>sort_s[2]:
+                    return 'можно'
+                return "жаль, не выйдет"
+            return "c отрицательными числами ничего не выйдет"
+        return 'вводите только числа'
+
+triang1= TrCh([2,3,4])
+triang2= TrCh([-2,3,4])
+triang3= TrCh(["2",3,4])
+print (triang1.is_tr())
+'''
+
+'''
+class Ni:
+    def __init__(self,name,age):
+        if name=='Николай':
+            self.name=name
+        else:
+            self.name= f"no, {name} is NIk"
+        self.age=age
+
+u1= Ni("ynj",13)
+print(u1.name)
+
+'''
