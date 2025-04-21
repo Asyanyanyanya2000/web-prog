@@ -104,18 +104,3 @@ while i<n:
     i+=1
     nom = new_row(nom)
 
-'''
-while i<n:
-    print(nom)
-    i+=1
-    j=0
-    row = []
-    while j <= int(len(nom)):
-        if j==0 or int(len(nom))==int(len(row)) :
-            row.append(1)
-        else:
-            a=int(nom[j-1])+int(nom[j])
-            row.append(a)
-        j+=1 
-    nom = row
-'''
